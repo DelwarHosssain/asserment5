@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Work+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <title>summer-sale</title>
+    <title>Document</title>
     <style>
         body{
             font-family: 'Lato', sans-serif;
@@ -32,36 +32,83 @@
         </div>
     </header>
     <main>
-        <section class="bg-[#f8f8f8]">
-            <div class="shop-bar flex flex-col lg:flex-row md:container md:mx-auto">
+        <section class="bg-[#f8f8f8] ">
+            <div class="shop-bar flex flex-col lg:flex-row md:container md:mx-auto ">
                 <!-- cardShow -->
-                <div class="card flex-1">
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <figure class="px-10 pt-10">
-                          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-                        </figure>
-                        <div class="card-body items-center text-center">
-                          <h2 class="card-title">Shoes!</h2>
-                          <p>If a dog chews shoes whose shoes does he choose?</p>
-                          <div class="card-actions">
-                            <button class="btn btn-primary">Buy Now</button>
-                          </div>
+                <div class="card flex-1 mt-32 ">
+                    <div class="card w-72 bg-base-100 shadow-xl ">
+                        <div class="w-9/12 h-9/12 m-auto mt-8">
+                            <figure class="w px-10 pt-10 bg-[#f3f3f3]">
+                                <img src="/images/prod1.png" alt="Shoes" class="rounded-xl" />
+                              </figure>
                         </div>
-                      </div>
+                        <div class="card-body items-center text-center">
+                            <div class="rating">
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" checked />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                            </div>
+                            <h2 class="card-title">K. Accessories</h2>
+                            <span>39.00 TK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flex-1 mt-32 ">
+                    <div class="card w-72 bg-base-100 shadow-xl ">
+                        <div class="w-9/12 h-9/12 m-auto mt-8">
+                            <figure class="w px-10 pt-10 bg-[#f3f3f3]">
+                                <img src="/images/prod1.png" alt="Shoes" class="rounded-xl" />
+                              </figure>
+                        </div>
+                        <div class="card-body items-center text-center">
+                            <div class="rating">
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" checked />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                            </div>
+                            <h2 class="card-title">K. Accessories</h2>
+                            <span>39.00 TK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card flex-1 mt-32 ">
+                    <div class="card w-72 bg-base-100 shadow-xl ">
+                        <div class="w-9/12 h-9/12 m-auto mt-8">
+                            <figure class="w px-10 pt-10 bg-[#f3f3f3]">
+                                <img src="/images/prod1.png" alt="Shoes" class="rounded-xl" />
+                              </figure>
+                        </div>
+                        <div class="card-body items-center text-center">
+                            <div class="rating">
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" checked />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                                <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+                            </div>
+                            <h2 class="card-title">K. Accessories</h2>
+                            <span>39.00 TK</span>
+                        </div>
+                    </div>
                 </div>
                 <!-- total-bar -->
-                <div class="total-bar w-[332px] h-[148px] bg-white p-4">
-                    <div class="vawser-bar">
+                <div class="mt-32  ">
+                    <div class="vawser-bar total-bar w-[332px] h-[148px] bg-white p-4 mb-12">
                         <h1>Have coupon?</h1>
-                        <form>
-                            <div class="relative mb-4">
-                              <input type="text" class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" placeholder="Coupon code" id="vauser-bart">
+                        <form class="flex items-center ">
+                            <div class="relative">
+                              <input type="text" class="w-auto px-4 py-2 border rounded focus:outline-none focus:border-blue-500" placeholder="Coupon code" id="vauser-bart">
                             </div>
-                            <button class="bg-[#E527B2] text-white px-4 py-2 rounded-md hover:bg-[#C725AC] focus:outline-none focus:ring-2 focus:ring-[#E527B2]" type="submit">Apply</button>
-                          </form>
+                            <button class="bg-[#E527B2] text-white px-3 py-2 rounded-md hover:bg-[#C725AC] focus:outline-none focus:ring-2 focus:ring-[#E527B2] w-[calc(100% - 2rem)]" type="submit">Apply</button>
+                        </form>
                     </div>
                     <div class="all-tolat-bar">
-
+                        <div class="vawser-bar total-bar w-[332px] h-[148px] bg-white p-4">
+                        </div>
                     </div>
                 </div>
             </div>
