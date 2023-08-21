@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Work+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>summer-sale</title>
+    <style>
+        body{
+            font-family: 'Lato', sans-serif;
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="bg-[#f9f6e2] w-full h-[873px] ">
+        <div class="banner md:container md:mx-auto lg:flex justify-around items-center">
+            <div class="text-part text-center space-y-5">
+                <h5 class="text-4xl">---SALE FEVER---</h5>
+                <h1 class="text-6xl font-semibold">Purchase TK 200 or <br> above & get <span class="text-[#E527B2]"> 20% off</span></h1>
+                <span class="text-2xl  font-medium ">Use Promo Code</span>
+                <button class="bg-[#E527B2] p-1 rounded-md text-white">SELL200</button>
+            </div>
+            <div class="image-part">
+                <img src="images/Summer 1.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="bg-[#f8f8f8]">
+            <div class="shop-bar flex flex-col lg:flex-row md:container md:mx-auto">
+                <!-- cardShow -->
+                <div class="card flex-1">
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure class="px-10 pt-10">
+                          <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">Shoes!</h2>
+                          <p>If a dog chews shoes whose shoes does he choose?</p>
+                          <div class="card-actions">
+                            <button class="btn btn-primary">Buy Now</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <!-- total-bar -->
+                <div class="total-bar w-[332px] h-[148px] bg-white p-4">
+                    <div class="vawser-bar">
+                        <h1>Have coupon?</h1>
+                        <form>
+                            <div class="relative mb-4">
+                              <input type="text" class="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500" placeholder="Coupon code" id="vauser-bart">
+                            </div>
+                            <button class="bg-[#E527B2] text-white px-4 py-2 rounded-md hover:bg-[#C725AC] focus:outline-none focus:ring-2 focus:ring-[#E527B2]" type="submit">Apply</button>
+                          </form>
+                    </div>
+                    <div class="all-tolat-bar">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
