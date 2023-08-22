@@ -23,7 +23,7 @@ const cart = {
         this.calculateTotal();
         this.updateSidebar();
 
-        const buttonElement = document.getElementById("applyCouponBtn");
+    const buttonElement = document.getElementById("applyCouponBtn");
 
     if (this.total < 200) {
         buttonElement.disabled = true; // Disable the button
@@ -46,20 +46,9 @@ const cart = {
         discountElement.textContent = this.discount.toFixed(2);
         finalElement.textContent = this.finalPrice.toFixed(2);
     },
+    
 };
+
 
 const applyCouponBtn = document.getElementById("applyCouponBtn");
 
-
-
-applyCouponBtn.addEventListener("click", () => {
-    const couponInput = document.getElementById("couponInput");
-    const couponCode = couponInput.value;
-
-    if (couponCode === "SELL200" & cart.total >= 200 ) {
-        const discountAmount = cart.total * 0.2;
-        cart.discount = discountAmount;
-        cart.calculateTotal(); 
-        cart.updateSidebar();
-    }
-});
