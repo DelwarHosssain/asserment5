@@ -1,41 +1,56 @@
-function handClickPrice (tergat){
-    const showItams =document.getElementById("itam-bar")
+function handClickPrice(tergat) {
+    const showItems = document.getElementById("itam-bar");
     const itemName = tergat.parentNode.childNodes[3].innerText;
     const li = document.createElement("li");
-    li.innerText =itemName;
-    showItams.appendChild(li);
+    li.innerText = itemName;
+    showItems.appendChild(li);
 
-    const parPrice = tergat.parentNode.childNodes[2].innerText;
- 
+    const parPrice = parseFloat(tergat.parentNode.querySelector("p span").innerText);
+    const finalPrice = parPrice; // No discount for non-numeric values
+
+    cart.add({ price: finalPrice }); // Add item with final price to cart
 }
+
 const cart = {
     items: [],
     total: 0,
+    discount: 0,
+    finalPrice: 0,
+
     add(item) {
-      this.items.push(item);
-      this.calculateTotal();
+        this.items.push(item);
+        this.calculateTotal();
+        this.updateSidebar();
     },
+
     calculateTotal() {
-      this.total = this.items.reduce((acc, item) => acc + item.price, 0);
-      this.updateSidebarTotal();
+        this.total = this.items.reduce((acc, item) => acc + item.price, 0);
+        this.finalPrice = this.total - this.discount;
     },
-    updateSidebarTotal() {
-      const totalElement = document.querySelector("#sidebar-total");
-      totalElement.textContent = this.total.toFixed(2);
+
+    updateSidebar() {
+        const totalElement = document.querySelector("#sidebar-total");
+        const discountElement = document.querySelector("#sidebar-discount");
+        const finalElement = document.querySelector("#sidebar-final");
+
+        totalElement.textContent = this.total.toFixed(2);
+        discountElement.textContent = this.discount.toFixed(2);
+        finalElement.textContent = this.finalPrice.toFixed(2);
     },
-  };
-  
-function handleClickPrice(card) {
-    const price = parseFloat(card.querySelector("p span").textContent);
-    const item = { price };
-    cart.add(item);
-}
-  
-const cards = document.querySelectorAll(".card-body");
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      handleClickPrice(card);
-    });
+};
+
+const applyCouponBtn = document.getElementById("applyCouponBtn");
+
+applyCouponBtn.addEventListener("click", () => {
+    const couponInput = document.getElementById("couponInput");
+    const couponCode = couponInput.value;
+
+    if (couponCode === "SELL200") {
+        const discountAmount = cart.total * 0.2; // 20% discount
+        cart.discount = discountAmount;
+        cart.calculateTotal(); // Recalculate total and final price
+        cart.updateSidebar();
+    }
 });
 
-// console.log(li);
+// আপনার অন্যান্য কোড এখানে থাকবে

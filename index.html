@@ -53,7 +53,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">K. Accessories</h2>
-                            <p onclick="handClickPrice(this)"><span>39.00</span> TK</p>
+                            <p onclick="handClickPrice(this)"><span class="">39.00</span> TK</p>
                         </div>
                     </div>
                     <!-- Card 2 -->
@@ -72,7 +72,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">K. Accessories</h2>
-                            <p onclick="handClickPrice(this)"><span>25.00 </span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">25.00 </span>TK</p>
                         </div>
                     </div>
                     <!-- Card 3 -->
@@ -91,7 +91,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">Home Cooker</h2>
-                            <p onclick="handClickPrice(this)"><span>49.00</span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">49.00</span>TK</p>
                         </div>
                     </div>
                     <div class=" w-8/12 lg:w-full col-span-1 md:col-span-3  lg:col-span-3 ">
@@ -113,7 +113,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">Sports Back Cap</h2>
-                            <p onclick="handClickPrice(this)"><span>49.00 </span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">49.00 </span>TK</p>
                         </div>
                     </div>
                     <!-- Card 5-->
@@ -132,7 +132,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">Full Jersey Set</h2>
-                            <p onclick="handClickPrice(this)"><span>69.00 </span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">69.00 </span>TK</p>
                         </div>
                     </div>
                     <!-- Card 6 -->
@@ -151,7 +151,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">Sports cates</h2>
-                            <p onclick="handClickPrice(this)"><span>159.00 </span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">159.00 </span>TK</p>
                         </div>
                     </div>
                     <div class=" w-8/12 lg:w-full col-span-1 md:col-span-3  lg:col-span-3 ">
@@ -173,7 +173,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">Single Relax Chair</h2>
-                            <p onclick="handClickPrice(this)"><span>189.00 </span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">189.00 </span>TK</p>
                         </div>
                     </div>
                     <!-- Card 8 -->
@@ -192,7 +192,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">Children play</h2>
-                            <p onclick="handClickPrice(this)"><span>299.00 </span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">299.00 </span>TK</p>
                         </div>
                     </div>
                     <!-- Card 9 -->
@@ -211,7 +211,7 @@
                                 <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
                             </div>
                             <h2 class="card-title">Flexible Sofa</h2>
-                            <p onclick="handClickPrice(this)"><span>339.00 </span>TK</p>
+                            <p onclick="handClickPrice(this)"><span id="click-price">339.00 </span>TK</p>
                         </div>
                     </div>
                 </div>
@@ -221,8 +221,8 @@
                     
                         <h1 class="text-lg font-semibold mb-2">Have a coupon?</h1>
                         <form class="flex items-center">
-                            <input type="text" class="w-8/12 border border-gray-300 px-3 py-2 rounded-md focus:ring focus:ring-blue-200" placeholder="Coupon code">
-                            <button class="ml-2 bg-[#E527B2] text-white px-3 py-2 rounded-md hover:bg-[#C725AC] focus:ring focus:ring-[#E527B2]">
+                            <input id="couponInput" type="text" class="w-8/12 border border-gray-300 px-3 py-2 rounded-md focus:ring focus:ring-blue-200" placeholder="Coupon code">
+                            <button id="'applyCouponBtn'" class="ml-2 bg-[#E527B2] text-white px-3 py-2 rounded-md hover:bg-[#C725AC] focus:ring focus:ring-[#E527B2]">
                                 Apply</button>
                         </form>
                     </div>
@@ -236,17 +236,25 @@
                             </div>
                             <hr class="w-10/12 m-auto mt-18">
                             <div class="mt-11 p-4">
-                                <h2>Total Price:<span id="sidebar-total">00</span></h2>
-                                <h2>Discount:<span>00</span></h2>
-                                <h2>Total:<span>00</span></h2>
+                                <h2>Total Price: <span id="sidebar-total">00</span> Tk</h2>
+                                <h2>Discount:<span id="sidebar-discount">00</span></h2>
+                                <h2>Total:<span id="sidebar-final">00</span></h2>
                             </div>
                             <hr class="w-10/12 m-auto mt-10">
                         </div>
                         </div>
-                    <div class="relative bottom-12 left-10">
-                        <button class="mt-4 ml-auto mr-4 px-10 py-4 bg-[#E527B2] text-white rounded-md hover:bg-[#C725AC] focus:ring focus:ring-[#E527B2]">
-                            Make Purchase
-                        </button>
+                    <div class="relative bottom-12 left-[50px]">
+                        <a href="#my_modal_8" class="btn btn mt-4 ml-auto mr-4 px-11 py-4 bg-[#E527B2] text-white rounded-md hover:bg-[#C725AC] focus:ring focus:ring-[#E527B2]">open modal</a>
+                        <!-- Put this part before tag -->
+                        <div class="modal" id="my_modal_8">
+                          <div class="modal-box">
+                            <h3 class="font-bold text-lg">Hello!</h3>
+                            <p class="py-4">This modal works with anchor links</p>
+                            <div class="modal-action">
+                             <a href="#" class="btn">Yay!</a>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -254,7 +262,5 @@
     </main>
     <!-- script tag -->
     <script src="index.js"></script>
-    <script>
-    </script>
 </body>
 </html>
