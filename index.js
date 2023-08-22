@@ -46,9 +46,9 @@ applyCouponBtn.addEventListener("click", () => {
     const couponCode = couponInput.value;
 
     if (couponCode === "SELL200") {
-        const discountAmount = cart.total * 0.2; // 20% discount
+        const discountAmount = cart.total * 0.2;
         cart.discount = discountAmount;
-        cart.calculateTotal(); // Recalculate total and final price
+        cart.calculateTotal(); 
         cart.updateSidebar();
     }
 });
