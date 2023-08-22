@@ -17,10 +17,19 @@ const cart = {
     discount: 0,
     finalPrice: 0,
 
+
     add(item) {
         this.items.push(item);
         this.calculateTotal();
         this.updateSidebar();
+
+        const buttonElement = document.getElementById("applyCouponBtn");
+
+    if (this.total < 200) {
+        buttonElement.disabled = true; // Disable the button
+    } else {
+        buttonElement.disabled = false; // Enable the button
+    }
     },
 
     calculateTotal() {
@@ -41,16 +50,16 @@ const cart = {
 
 const applyCouponBtn = document.getElementById("applyCouponBtn");
 
+
+
 applyCouponBtn.addEventListener("click", () => {
     const couponInput = document.getElementById("couponInput");
     const couponCode = couponInput.value;
 
-    if (couponCode === "SELL200") {
+    if (couponCode === "SELL200" & cart.total >= 200 ) {
         const discountAmount = cart.total * 0.2;
         cart.discount = discountAmount;
         cart.calculateTotal(); 
         cart.updateSidebar();
     }
 });
-
-
