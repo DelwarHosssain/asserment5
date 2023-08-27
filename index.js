@@ -23,16 +23,18 @@ const cart = {
         this.calculateTotal();
         this.updateSidebar();
 
-    const buttonElement = document.getElementById("applyCouponBtn");
+
+    const buttonElement = document.getElementById('apply-coupon-btn');
 
     if (this.total < 200) {
         buttonElement.disabled = true; // Disable the button
-    } else {
+    } 
+    else {
         buttonElement.disabled = false; // Enable the button
     }
 
     },
-
+    
     calculateTotal() {
         this.total = this.items.reduce((acc, item) => acc + item.price, 0);
         this.finalPrice = this.total - this.discount;
@@ -49,18 +51,20 @@ const cart = {
     },
 };
 
-const applyCouponBtn = document.getElementById("applyCouponBtn");
-
-
-
+const applyCouponBtn = document.getElementById('apply-coupon-btn');
 applyCouponBtn.addEventListener("click", () => {
     const couponInput = document.getElementById("couponInput");
     const couponCode = couponInput.value;
 
-    if (couponCode === "SELL200" & cart.total >= 200 ) {
+    if (couponCode === "SELL200" ||couponCode === "sell200" & cart.total >= 200 ) {
         const discountAmount = cart.total * 0.2;
         cart.discount = discountAmount;
         cart.calculateTotal(); 
         cart.updateSidebar();
+        couponInput.value=(' ');
     }
+
+    
 });
+
+
